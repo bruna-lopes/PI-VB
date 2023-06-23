@@ -1,7 +1,6 @@
-<div>
-    <p>{{titulo}}</p>
-    <p>{{subtitulo}}</p>
-    <p>{{preco}}</p>
+<div *ngIf="onClick" (click)="onClick(preco)">
     <img src={{imagem}} />
-
+    <h1>{{titulo}}</h1>
+    <p>{{subtitulo}}</p>
+    <h3>R$ {{preco}}</h3>
 </div>
