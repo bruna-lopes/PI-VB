@@ -10,38 +10,15 @@
 </head>
 
 <body>
-  <img src="../assets/logo-b.png" alt="logo">
+  <app-header valorTotal={{valorCarrinho}} qntItens={{itensSelecionados}}>
+  </app-header>
 
-  <app-header></app-header>
-  {{valorCarrinho}}
   <div class="card-container">
-    <app-card titulo="Camiseta" subtitulo="Camiseta clássica azul e preta" preco="100.00"
-      imagem="../assets/camiseta-1.jpg" [onClick]="adicionarNoCarrinho">
+
+    <app-card *ngFor="let card of listaDeCards" titulo={{card.titulo}} subtitulo={{card.subtitulo}} preco={{card.preco}}
+      imagem={{card.imagem}} (click)="adicionarNoCarrinho(card.preco)">
     </app-card>
 
-    <app-card titulo="Camiseta" subtitulo="Camiseta clássica azul e branca" preco="100,00"
-      imagem="../assets/camiseta-2.jpg">
-    </app-card>
-
-    <app-card titulo="Camiseta" subtitulo="Camiseta clássica branca e preta" preco="100,00"
-      imagem="../assets/camiseta-3.jpg">
-    </app-card>
-
-    <app-card titulo="Camiseta longa" subtitulo="Camiseta longa branca e preta" preco="200,00"
-      imagem="../assets/camiseta-longa-1.jpg">
-    </app-card>
-
-    <app-card titulo="Conjunto" subtitulo="Conjunto rosa e preto" preco="300,00" imagem="../assets/conjunto-1.jpg">
-    </app-card>
-
-    <app-card titulo="Conjunto" subtitulo="Conjunto roxo e branco" preco="300,00" imagem="../assets/conjunto-2.jpg">
-    </app-card>
-
-    <app-card titulo="Calça" subtitulo="Calça vermelha com branco" preco="100,00" imagem="../assets/calca-1.jpg">
-    </app-card>
-
-    <app-card titulo="Vestido" subtitulo="Vestido azul e branco" preco="200,00" imagem="../assets/vestido-1.jpg">
-    </app-card>
   </div>
   <app-footer></app-footer>
 

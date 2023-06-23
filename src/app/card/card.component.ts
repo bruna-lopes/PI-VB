@@ -12,7 +12,6 @@ export class CardComponent implements OnInit {
   @Input() subtitulo: string = '';
   @Input() preco: string = '';
   @Input() imagem: string = '';
-  @Input() onClick: ((preco: string) => void) | undefined;
 
   ngOnInit(): void {}
 }
